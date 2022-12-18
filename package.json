@@ -1,7 +1,9 @@
 {
   "name": "medica",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Soumalya Bhattacharya",
+  "license": "GPL-3.0",
   "dependencies": {
     "@mui/icons-material": "^5.11.0",
     "@testing-library/jest-dom": "^5.16.5",
