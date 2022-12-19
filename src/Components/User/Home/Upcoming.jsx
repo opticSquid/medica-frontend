@@ -19,7 +19,7 @@ function Upcoming() {
                             </Row>
                             <Row>
                                 <Col xs={1}><CalendarEvent/></Col>
-                                <Col>31/12/22&nbsp;3:35pm</Col>
+                                <Col style={{"fontFamily":"'Roboto', sans-serif","MozOsxFontSmoothing": "grayscale","WebkitFontSmoothing": "antialiased","fontWeight":400, "color":"rgba(0,0,0,0.7)"}}>31/12/22&nbsp;3:35pm</Col>
                             </Row>
                         </Col>
                     </Row>
