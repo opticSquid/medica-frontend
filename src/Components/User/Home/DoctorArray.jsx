@@ -1,17 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { PersonCircle } from "react-bootstrap-icons";
+import { array } from "../../Data/SampleData";
+import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 function Doctorarray(props) {
-  const array = [
-    "Doctor Name 1",
-    "Doctor Name 2",
-    "Doctor Name 3",
-    "Doctor Name 4",
-    "Doctor Name 5",
-    "Doctor Name 6",
-    "Doctor Name 7",
-    "Doctor Name 8",
-  ];
+  const width = useWindowDimensions();
   return (
     <Container
       style={{
@@ -22,19 +15,36 @@ function Doctorarray(props) {
     >
       <Row>
         {array.map((d) => (
-          <Col xs={3}>
+          <Col
+            xs={3}
+            style={
+              width > 400
+                ? { paddingTop: "1%", paddingBottom: "1%" }
+                : { padding: "0%" }
+            }
+          >
             <Row>
-              <PersonCircle color="#0D6EFD" size={24} />
+              <PersonCircle color="#0D6EFD" size={width < 400 ? 24 : 48} />
             </Row>
             <Row style={{ textAlign: "center" }}>
               <p
-                style={{
-                  fontFamily: "'Roboto', sans-serif",
-                  MozOsxFontSmoothing: "grayscale",
-                  WebkitFontSmoothing: "antialiased",
-                  fontWeight: 400,
-                  fontSize: "1em",
-                }}
+                style={
+                  width < 400
+                    ? {
+                        fontFamily: "'Roboto', sans-serif",
+                        MozOsxFontSmoothing: "grayscale",
+                        WebkitFontSmoothing: "antialiased",
+                        fontWeight: 400,
+                        fontSize: "1em",
+                      }
+                    : {
+                        fontFamily: "'Roboto', sans-serif",
+                        MozOsxFontSmoothing: "grayscale",
+                        WebkitFontSmoothing: "antialiased",
+                        fontWeight: 400,
+                        fontSize: "1.2em",
+                      }
+                }
               >
                 {d}
               </p>

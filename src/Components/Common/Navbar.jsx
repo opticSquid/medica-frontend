@@ -1,21 +1,25 @@
-import React,{Fragment} from 'react';
-import { Container, Navbar as Bar, Nav } from 'react-bootstrap';
-import {PersonCircle} from 'react-bootstrap-icons';
+import React, { Fragment } from "react";
+import { Container, Navbar as Bar, Nav } from "react-bootstrap";
+import { PersonCircle } from "react-bootstrap-icons";
+import useWindowDimensions from "../Hooks/UseWindowDimensions";
 function Navbar(props) {
-    return (
-        <Fragment>
-            <Bar bg='primary' variant='dark' fixed='top'>
-                <Container>  
-                <Bar.Brand href='#' className='me-auto'>Medica</Bar.Brand>
-                <Nav>
-                    <Nav.Link href='/login'>
-                        <PersonCircle size={25}/>
-                    </Nav.Link>
-                </Nav>
-                </Container>
-            </Bar>
-        </Fragment>
-    );
+  const width = useWindowDimensions();
+  return (
+    <Fragment>
+      <Bar bg="primary" variant="dark" fixed="top" className="shadow">
+        <Container fluid>
+          <Bar.Brand href="#" className="me-auto">
+            Medica
+          </Bar.Brand>
+          <Nav>
+            <Nav.Link href="/login">
+              <PersonCircle color="white" size={width < 400 ? 25 : 30} />
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Bar>
+    </Fragment>
+  );
 }
 
 export default Navbar;
