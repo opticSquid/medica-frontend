@@ -20,7 +20,7 @@ function Doctorarray(props) {
             style={
               width > 400
                 ? { paddingTop: "1%", paddingBottom: "1%" }
-                : { padding: "0%" }
+                : { padding: "1.5%" }
             }
           >
             <Row>
@@ -35,7 +35,7 @@ function Doctorarray(props) {
                         MozOsxFontSmoothing: "grayscale",
                         WebkitFontSmoothing: "antialiased",
                         fontWeight: 400,
-                        fontSize: "1em",
+                        fontSize: "0.8em",
                       }
                     : {
                         fontFamily: "'Roboto', sans-serif",

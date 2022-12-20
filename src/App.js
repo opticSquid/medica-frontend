@@ -8,11 +8,13 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import Info from "./Components/User/Info/Info";
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/info" element={<Info />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
