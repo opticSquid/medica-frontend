@@ -8,9 +8,11 @@ import {
   ListGroup,
 } from "react-bootstrap";
 import { TelephoneFill, Envelope } from "react-bootstrap-icons";
+import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 function DoctorInfo(props) {
+  const width = useWindowDimensions();
   return (
-    <Container style={{ padding: "2%" }}>
+    <Container fluid={width < 400 ? false : true} style={{ padding: "2%" }}>
       <section style={{ paddingTop: "1%" }}>
         <h1
           className="roboto"
@@ -31,30 +33,50 @@ function DoctorInfo(props) {
       </section>
       <div
         className="roboto"
-        style={{
-          color: "gray",
-          fontSize: "0.8em",
-        }}
+        style={
+          width < 400
+            ? {
+                color: "gray",
+                fontSize: "0.8em",
+              }
+            : {
+                color: "gray",
+                fontSize: "1.5em",
+              }
+        }
       >
         Doctor of what
       </div>
       <div
         className="roboto"
-        style={{
-          color: "gray",
-          fontSize: "0.8em",
-        }}
+        style={
+          width < 400
+            ? {
+                color: "gray",
+                fontSize: "0.8em",
+              }
+            : { color: "gray", fontSize: "1.5em" }
+        }
       >
         Relevant degrees that the person holds
       </div>
       <div
         className="roboto"
-        style={{
-          fontWeight: "bold",
-          fontSize: "1.2em",
-          paddingTop: "2%",
-          paddingBottom: "2%",
-        }}
+        style={
+          width < 400
+            ? {
+                fontWeight: "bold",
+                fontSize: "1.2em",
+                paddingTop: "2%",
+                paddingBottom: "2%",
+              }
+            : {
+                fontWeight: "bold",
+                fontSize: "1.7em",
+                paddingTop: "2%",
+                paddingBottom: "2%",
+              }
+        }
       >
         Emergency Contact
       </div>
@@ -62,11 +84,25 @@ function DoctorInfo(props) {
         <Row>
           <Col xs={5}>
             <a href="tel:+918617882389">
-              <Button variant="success" style={{ width: "100%" }}>
-                <TelephoneFill />
+              <Button
+                variant="success"
+                style={
+                  width < 400
+                    ? { width: "100%" }
+                    : {
+                        width: "100%",
+                        padding: "3%",
+                      }
+                }
+              >
+                <TelephoneFill size={width < 400 ? 16 : 40} />
                 <span
                   className="align-middle roboto"
-                  style={{ paddingLeft: "5%" }}
+                  style={
+                    width < 400
+                      ? { paddingLeft: "5%" }
+                      : { paddingLeft: "2%", fontSize: "2em" }
+                  }
                 >
                   Call
                 </span>
@@ -75,11 +111,25 @@ function DoctorInfo(props) {
           </Col>
           <Col xs={{ span: 5, offset: 2 }}>
             <a href="mailto:soumalyabhattacharya6@gmail.com">
-              <Button variant="danger" style={{ width: "100%" }}>
-                <Envelope />
+              <Button
+                variant="danger"
+                style={
+                  width < 400
+                    ? { width: "100%" }
+                    : {
+                        width: "100%",
+                        padding: "3%",
+                      }
+                }
+              >
+                <Envelope size={width < 400 ? 16 : 40} />
                 <span
                   className="align-middle roboto"
-                  style={{ paddingLeft: "5%" }}
+                  style={
+                    width < 400
+                      ? { paddingLeft: "5%" }
+                      : { paddingLeft: "2%", fontSize: "2em" }
+                  }
                 >
                   Mail
                 </span>
@@ -90,34 +140,120 @@ function DoctorInfo(props) {
       </Container>
       <div
         className="roboto"
-        style={{
-          fontWeight: "bolder",
-          fontSize: "1em",
-          paddingTop: "2%",
-          paddingBottom: "2%",
-        }}
+        style={
+          width < 400
+            ? {
+                fontWeight: "bolder",
+                fontSize: "1em",
+                paddingTop: "2%",
+                paddingBottom: "2%",
+              }
+            : {
+                fontWeight: "bolder",
+                fontSize: "1.7em",
+                paddingTop: "2%",
+                paddingBottom: "2%",
+              }
+        }
       >
         Visiting Time
       </div>
       <Accordion>
         <Accordion.Item eventKey="0">
-          <Accordion.Header>WeekDays</Accordion.Header>
+          <Accordion.Header>
+            <span
+              className="roboto"
+              style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+            >
+              Weekdays
+            </span>
+          </Accordion.Header>
           <Accordion.Body>
             <ListGroup>
-              <ListGroup.Item>Monday 9:00 am - 12:00 pm</ListGroup.Item>
-              <ListGroup.Item>Tuesday 9:00 am - 12:00 pm</ListGroup.Item>
-              <ListGroup.Item>Wednesday 9:00 am - 12:00 pm</ListGroup.Item>
-              <ListGroup.Item>Thursday 9:00 am - 12:00 pm</ListGroup.Item>
-              <ListGroup.Item>Friday 9:00 am - 12:00 pm</ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Monday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Tuesday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Wednesday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Thursday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Friday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
             </ListGroup>
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="1">
-          <Accordion.Header>Weekends</Accordion.Header>
+          <Accordion.Header>
+            <span
+              className="roboto"
+              style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+            >
+              Weekends
+            </span>
+          </Accordion.Header>
           <Accordion.Body>
             <ListGroup>
-              <ListGroup.Item>Saturday 9:00 am - 12:00 pm</ListGroup.Item>
-              <ListGroup.Item>Sunday 9:00 am - 12:00 pm</ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Saturday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <span
+                  className="roboto"
+                  style={
+                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                  }
+                >
+                  Sunday 9:00 am - 12:00 pm
+                </span>
+              </ListGroup.Item>
             </ListGroup>
           </Accordion.Body>
         </Accordion.Item>
@@ -128,8 +264,20 @@ function DoctorInfo(props) {
             justifyContent: "center",
           }}
         >
-          <Button variant="warning" size="lg" style={{ width: "80%" }}>
-            Book Appointment
+          <Button
+            variant="warning"
+            size="lg"
+            className="shadow upper-shadow"
+            style={
+              width < 400 ? { width: "80%" } : { width: "80%", padding: "2%" }
+            }
+          >
+            <span
+              className="roboto"
+              style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+            >
+              Book Appointment
+            </span>
           </Button>
         </Row>
       </Container>

@@ -14,9 +14,9 @@ function Slideshow() {
           fluid
           src={Image1}
           style={
-            width > 400
-              ? { height: "300px", width: "100%", objectFit: "contain" }
-              : { height: "auto" }
+            width < 400
+              ? { height: "auto" }
+              : { height: "300px", width: "100%", objectFit: "contain" }
           }
         />
       </Carousel.Item>
@@ -26,9 +26,9 @@ function Slideshow() {
           fluid
           src={Image2}
           style={
-            width > 400
-              ? { height: "300px", width: "100%", objectFit: "contain" }
-              : { height: "auto" }
+            width < 400
+              ? { height: "auto" }
+              : { height: "300px", width: "100%", objectFit: "contain" }
           }
         />
       </Carousel.Item>
@@ -38,9 +38,9 @@ function Slideshow() {
           fluid
           src={Image3}
           style={
-            width > 400
-              ? { height: "300px", width: "100%", objectFit: "contain" }
-              : { height: "auto" }
+            width < 400
+              ? { height: "auto" }
+              : { height: "300px", width: "100%", objectFit: "contain" }
           }
         />
       </Carousel.Item>

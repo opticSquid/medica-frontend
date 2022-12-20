@@ -16,7 +16,12 @@ function DoctorPhoto(props) {
               objectFit: "cover",
               position: "fixed",
             }
-          : { marginTop: "5%", width: "100%", objectFit: "cover" }
+          : {
+              marginTop: "5%",
+              objectFit: "cover",
+              height: "20%",
+              width: "auto",
+            }
       }
     />
   );

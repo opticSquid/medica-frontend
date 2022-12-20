@@ -1,30 +1,48 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "../../Common/Navbar";
 import DoctorInfo from "./DoctorInfo";
 import DoctorPhoto from "./DoctorPhoto";
-
+import useWindowDimensions from "../../Hooks/UseWindowDimensions";
+import { Container, Row } from "react-bootstrap";
 function Info() {
+  const width = useWindowDimensions();
   return (
     <div
-      style={{
-        position: "relative",
-        width: window.innerWidth,
-        height: window.innerHeight,
-      }}
+      style={
+        width < 400
+          ? {
+              position: "relative",
+              width: window.innerWidth,
+              height: window.innerHeight,
+            }
+          : { position: "static" }
+      }
     >
       <Navbar />
-      <DoctorPhoto />
+      {width < 400 ? (
+        <DoctorPhoto />
+      ) : (
+        <Container fluid>
+          <Row style={{ justifyContent: "center" }}>
+            <DoctorPhoto />
+          </Row>
+        </Container>
+      )}
       <div
         className="upper-shadow"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          top: "50%",
-          width: window.innerWidth,
-          borderTopLeftRadius: "15px",
-          borderTopRightRadius: "15px",
-          backgroundColor: "white",
-        }}
+        style={
+          width < 400
+            ? {
+                position: "relative",
+                zIndex: 1,
+                top: "60%",
+                width: window.innerWidth,
+                borderTopLeftRadius: "15px",
+                borderTopRightRadius: "15px",
+                backgroundColor: "white",
+              }
+            : { position: "relative" }
+        }
       >
         <DoctorInfo />
       </div>
