@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Row,
@@ -9,8 +9,19 @@ import {
 } from "react-bootstrap";
 import { TelephoneFill, Envelope } from "react-bootstrap-icons";
 import useWindowDimensions from "../../Hooks/UseWindowDimensions";
+import CreateBooking from "../CreateBooking/CreateBooking";
+import ConfirmationToast from "../CreateBooking/ConfirmationToast";
 function DoctorInfo(props) {
   const width = useWindowDimensions();
+  const [show, setShow] = useState(false);
+  const [booked, setBooked] = useState(false);
+  const handleBooking = (e) => {
+    e.preventDefault();
+    setBooked(true);
+    handleClose();
+  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <Container fluid={width < 400 ? false : true} style={{ padding: "2%" }}>
       <section style={{ paddingTop: "1%" }}>
@@ -271,6 +282,7 @@ function DoctorInfo(props) {
             style={
               width < 400 ? { width: "80%" } : { width: "80%", padding: "2%" }
             }
+            onClick={handleShow}
           >
             <span
               className="roboto"
@@ -279,8 +291,18 @@ function DoctorInfo(props) {
               Book Appointment
             </span>
           </Button>
+          {show === true ? (
+            <CreateBooking
+              show={show}
+              close={handleClose}
+              handleSubmit={handleBooking}
+            />
+          ) : (
+            <div />
+          )}
         </Row>
       </Container>
+      {booked === true ? <ConfirmationToast status={booked} /> : <div />}
     </Container>
   );
 }
