@@ -2,7 +2,7 @@ import React from "react";
 import { ListGroup, Row, Col } from "react-bootstrap";
 import { CalendarEvent } from "react-bootstrap-icons";
 import useWindowDimensions from "../../Hooks/UseWindowDimensions";
-import { data } from "../../Data/SampleData";
+import { data } from "../../Data/User/SampleData";
 function PreviousAppointments(props) {
   const width = useWindowDimensions();
   return (

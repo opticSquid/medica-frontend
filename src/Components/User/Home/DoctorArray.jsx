@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { PersonCircle } from "react-bootstrap-icons";
-import { array } from "../../Data/SampleData";
+import { array } from "../../Data/User/SampleData";
 import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 function Doctorarray(props) {
   const width = useWindowDimensions();
