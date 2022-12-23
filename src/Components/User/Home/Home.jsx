@@ -14,7 +14,7 @@ function UserHome() {
       <Container
         fluid
         style={
-          width < 400
+          width <= 576
             ? { marginTop: "15%", padding: "2%" }
             : { marginTop: "5%", padding: "2%" }
         }
@@ -22,7 +22,7 @@ function UserHome() {
         <Slideshow />
         <p
           style={
-            width < 400
+            width <= 576
               ? {
                   fontFamily: "'Roboto', sans-serif",
                   MozOsxFontSmoothing: "grayscale",
@@ -46,7 +46,7 @@ function UserHome() {
         <Upcoming />
         <p
           style={
-            width < 400
+            width <= 576
               ? {
                   fontFamily: "'Roboto', sans-serif",
                   MozOsxFontSmoothing: "grayscale",
@@ -70,7 +70,7 @@ function UserHome() {
         <Doctorarray />
         <p
           style={
-            width < 400
+            width <= 576
               ? {
                   fontFamily: "'Roboto', sans-serif",
                   MozOsxFontSmoothing: "grayscale",

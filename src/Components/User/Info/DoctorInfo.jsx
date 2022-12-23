@@ -23,7 +23,7 @@ function DoctorInfo(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Container fluid={width < 400 ? false : true} style={{ padding: "2%" }}>
+    <Container fluid={width <= 576 ? false : true} style={{ padding: "2%" }}>
       <section style={{ paddingTop: "1%" }}>
         <h1
           className="roboto"
@@ -45,7 +45,7 @@ function DoctorInfo(props) {
       <div
         className="roboto"
         style={
-          width < 400
+          width <= 576
             ? {
                 color: "gray",
                 fontSize: "0.8em",
@@ -61,7 +61,7 @@ function DoctorInfo(props) {
       <div
         className="roboto"
         style={
-          width < 400
+          width <= 576
             ? {
                 color: "gray",
                 fontSize: "0.8em",
@@ -74,7 +74,7 @@ function DoctorInfo(props) {
       <div
         className="roboto"
         style={
-          width < 400
+          width <= 576
             ? {
                 fontWeight: "bold",
                 fontSize: "1.2em",
@@ -98,7 +98,7 @@ function DoctorInfo(props) {
               <Button
                 variant="success"
                 style={
-                  width < 400
+                  width <= 576
                     ? { width: "100%" }
                     : {
                         width: "100%",
@@ -106,11 +106,11 @@ function DoctorInfo(props) {
                       }
                 }
               >
-                <TelephoneFill size={width < 400 ? 16 : 40} />
+                <TelephoneFill size={width <= 576 ? 16 : 40} />
                 <span
                   className="align-middle roboto"
                   style={
-                    width < 400
+                    width <= 576
                       ? { paddingLeft: "5%" }
                       : { paddingLeft: "2%", fontSize: "2em" }
                   }
@@ -125,7 +125,7 @@ function DoctorInfo(props) {
               <Button
                 variant="danger"
                 style={
-                  width < 400
+                  width <= 576
                     ? { width: "100%" }
                     : {
                         width: "100%",
@@ -133,11 +133,11 @@ function DoctorInfo(props) {
                       }
                 }
               >
-                <Envelope size={width < 400 ? 16 : 40} />
+                <Envelope size={width <= 576 ? 16 : 40} />
                 <span
                   className="align-middle roboto"
                   style={
-                    width < 400
+                    width <= 576
                       ? { paddingLeft: "5%" }
                       : { paddingLeft: "2%", fontSize: "2em" }
                   }
@@ -152,7 +152,7 @@ function DoctorInfo(props) {
       <div
         className="roboto"
         style={
-          width < 400
+          width <= 576
             ? {
                 fontWeight: "bolder",
                 fontSize: "1em",
@@ -174,7 +174,7 @@ function DoctorInfo(props) {
           <Accordion.Header>
             <span
               className="roboto"
-              style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+              style={width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
             >
               Weekdays
             </span>
@@ -185,7 +185,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Monday 9:00 am - 12:00 pm
@@ -195,7 +195,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Tuesday 9:00 am - 12:00 pm
@@ -205,7 +205,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Wednesday 9:00 am - 12:00 pm
@@ -215,7 +215,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Thursday 9:00 am - 12:00 pm
@@ -225,7 +225,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Friday 9:00 am - 12:00 pm
@@ -238,7 +238,7 @@ function DoctorInfo(props) {
           <Accordion.Header>
             <span
               className="roboto"
-              style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+              style={width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
             >
               Weekends
             </span>
@@ -249,7 +249,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Saturday 9:00 am - 12:00 pm
@@ -259,7 +259,7 @@ function DoctorInfo(props) {
                 <span
                   className="roboto"
                   style={
-                    width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }
+                    width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }
                   }
                 >
                   Sunday 9:00 am - 12:00 pm
@@ -280,13 +280,13 @@ function DoctorInfo(props) {
             size="lg"
             className="shadow upper-shadow"
             style={
-              width < 400 ? { width: "80%" } : { width: "80%", padding: "2%" }
+              width <= 576 ? { width: "80%" } : { width: "80%", padding: "2%" }
             }
             onClick={handleShow}
           >
             <span
               className="roboto"
-              style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+              style={width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
             >
               Book Appointment
             </span>

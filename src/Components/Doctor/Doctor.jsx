@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
-import { Container, Card, Accordion } from "react-bootstrap";
+import { Container, Card, Accordion, Button, Row, Col } from "react-bootstrap";
 import useWindowDimensions from "../Hooks/UseWindowDimensions";
 import Navbar from "../Common/Navbar";
 import Summary from "./Summary";
 import UpcomingAppointments from "./UpcomingAppointments";
 import RecentAppointments from "./RecentAppointments";
 import OngoingAppointment from "./OngoingAppointment";
+import AvailabilitySlots from "./AvailabilitySlots";
 function Doctor() {
   const width = useWindowDimensions();
   return (
@@ -13,7 +14,7 @@ function Doctor() {
       <Navbar />
       <Container
         style={
-          width < 400
+          width <= 576
             ? { marginTop: "15%", padding: "2%" }
             : { marginTop: "5%", padding: "2%" }
         }
@@ -22,11 +23,10 @@ function Doctor() {
         <Card
           className="roboto text-center p-2 shadow"
           style={
-            width < 400
+            width <= 576
               ? { width: "100%", color: "white", marginTop: "5%" }
               : {
-                  width: "50%",
-                  marginLeft: "25%",
+                  width: "100%",
                   color: "white",
                   marginTop: "3%",
                 }
@@ -38,6 +38,20 @@ function Doctor() {
             <RecentAppointments />
           </Accordion>
         </Card>
+        <AvailabilitySlots />
+        <Row className="sticky-bottom mt-3">
+          {width <= 576 ? (
+            <Col xs={12} style={{ textAlign: "center" }}>
+              <Button className="roboto" size="lg" variant="danger">
+                Make Unavailable
+              </Button>
+            </Col>
+          ) : (
+            <Button className="roboto" size="lg" variant="danger">
+              Make Unavailable
+            </Button>
+          )}
+        </Row>
       </Container>
     </Fragment>
   );

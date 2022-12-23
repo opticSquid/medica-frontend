@@ -7,13 +7,13 @@ function PreviousAppointments(props) {
   const width = useWindowDimensions();
   return (
     <ListGroup>
-      {data.map((d) => (
-        <ListGroup.Item>
+      {data.map((d, idx) => (
+        <ListGroup.Item key={idx}>
           <Row>
             <Col
               xs={5}
               style={
-                width < 400
+                width <= 576
                   ? {
                       fontFamily: "'Roboto', sans-serif",
                       MozOsxFontSmoothing: "grayscale",
@@ -33,11 +33,11 @@ function PreviousAppointments(props) {
               {d.name}
             </Col>
             <Col xs={{ span: 5, offset: 2 }} md={{ span: 2, offset: 5 }}>
-              <CalendarEvent size={width < 400 ? 14 : 16} />
+              <CalendarEvent size={width <= 576 ? 14 : 16} />
               &nbsp;
               <span
                 style={
-                  width < 400
+                  width <= 576
                     ? {
                         fontFamily: "'Roboto', sans-serif",
                         MozOsxFontSmoothing: "grayscale",
@@ -62,7 +62,7 @@ function PreviousAppointments(props) {
           </Row>
           <Row
             style={
-              width < 400
+              width <= 576
                 ? {
                     fontFamily: "'Roboto', sans-serif",
                     MozOsxFontSmoothing: "grayscale",

@@ -11,7 +11,7 @@ function Appointments({ patientName, date, time, reason }) {
           className="roboto"
           xs={5}
           style={
-            width < 400
+            width <= 576
               ? {
                   fontWeight: 600,
                   fontSize: "0.9em",
@@ -25,12 +25,12 @@ function Appointments({ patientName, date, time, reason }) {
           {patientName}
         </Col>
         <Col xs={{ span: 6, offset: 1 }} md={{ span: 4, offset: 3 }}>
-          <CalendarEvent size={width < 400 ? 14 : 16} />
+          <CalendarEvent size={width <= 576 ? 14 : 16} />
           &nbsp;
           <span
             className="roboto"
             style={
-              width < 400
+              width <= 576
                 ? {
                     fontWeight: 400,
                     fontSize: "0.7em",
@@ -50,7 +50,7 @@ function Appointments({ patientName, date, time, reason }) {
       <Row
         className="roboto"
         style={
-          width < 400
+          width <= 576
             ? {
                 fontWeight: 400,
                 fontSize: "0.7em",

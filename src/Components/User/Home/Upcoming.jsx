@@ -8,7 +8,7 @@ function Upcoming() {
     <Card
       className="shadow"
       style={
-        width < 400 ? { width: "100%" } : { width: "50%", marginLeft: "25%" }
+        width <= 576 ? { width: "100%" } : { width: "50%", marginLeft: "25%" }
       }
       bg="primary"
     >
@@ -25,7 +25,7 @@ function Upcoming() {
               <Row>
                 <p
                   style={
-                    width < 400
+                    width <= 576
                       ? {
                           fontFamily: "'Roboto', sans-serif",
                           MozOsxFontSmoothing: "grayscale",

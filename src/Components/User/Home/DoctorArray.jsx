@@ -14,8 +14,9 @@ function Doctorarray(props) {
       }}
     >
       <Row>
-        {array.map((d) => (
+        {array.map((d, idx) => (
           <Col
+            key={idx}
             xs={3}
             style={
               width > 400
@@ -24,12 +25,12 @@ function Doctorarray(props) {
             }
           >
             <Row>
-              <PersonCircle color="#0D6EFD" size={width < 400 ? 24 : 48} />
+              <PersonCircle color="#0D6EFD" size={width <= 576 ? 24 : 48} />
             </Row>
             <Row style={{ textAlign: "center" }}>
               <p
                 style={
-                  width < 400
+                  width <= 576
                     ? {
                         fontFamily: "'Roboto', sans-serif",
                         MozOsxFontSmoothing: "grayscale",

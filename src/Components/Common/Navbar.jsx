@@ -13,7 +13,7 @@ function Navbar(props) {
           </Bar.Brand>
           <Nav>
             <Nav.Link href="/login">
-              <PersonCircle color="white" size={width < 400 ? 25 : 30} />
+              <PersonCircle color="white" size={width <= 576 ? 25 : 30} />
             </Nav.Link>
           </Nav>
         </Container>

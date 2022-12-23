@@ -9,7 +9,7 @@ function DoctorPhoto(props) {
       fluid
       src={Image4}
       style={
-        width < 400
+        width <= 576
           ? {
               marginTop: "14%",
               width: "100%",

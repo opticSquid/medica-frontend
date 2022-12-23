@@ -9,7 +9,7 @@ function Info() {
   return (
     <div
       style={
-        width < 400
+        width <= 576
           ? {
               position: "relative",
               width: window.innerWidth,
@@ -19,7 +19,7 @@ function Info() {
       }
     >
       <Navbar />
-      {width < 400 ? (
+      {width <= 576 ? (
         <DoctorPhoto />
       ) : (
         <Container fluid>
@@ -31,7 +31,7 @@ function Info() {
       <div
         className="upper-shadow"
         style={
-          width < 400
+          width <= 576
             ? {
                 position: "relative",
                 zIndex: 1,

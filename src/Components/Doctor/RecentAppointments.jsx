@@ -10,7 +10,7 @@ function RecentAppointments(props) {
       <Accordion.Header>
         <span
           className="roboto"
-          style={width < 400 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
+          style={width <= 576 ? { fontSize: "1em" } : { fontSize: "1.5em" }}
         >
           Recent Appointments
         </span>

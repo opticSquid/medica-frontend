@@ -7,7 +7,7 @@ function ConfirmationToast({ status }) {
   return (
     <ToastContainer
       className="p-3"
-      position={width < 400 ? "bottom-center" : "bottom-end"}
+      position={width <= 576 ? "bottom-center" : "bottom-end"}
     >
       <Toast
         autohide

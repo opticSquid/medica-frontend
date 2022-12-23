@@ -14,7 +14,7 @@ function Slideshow() {
           fluid
           src={Image1}
           style={
-            width < 400
+            width <= 576
               ? { height: "auto" }
               : { height: "300px", width: "100%", objectFit: "contain" }
           }
@@ -26,7 +26,7 @@ function Slideshow() {
           fluid
           src={Image2}
           style={
-            width < 400
+            width <= 576
               ? { height: "auto" }
               : { height: "300px", width: "100%", objectFit: "contain" }
           }
@@ -38,7 +38,7 @@ function Slideshow() {
           fluid
           src={Image3}
           style={
-            width < 400
+            width <= 576
               ? { height: "auto" }
               : { height: "300px", width: "100%", objectFit: "contain" }
           }

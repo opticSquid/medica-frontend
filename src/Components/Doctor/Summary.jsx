@@ -6,11 +6,7 @@ function Summary(props) {
   return (
     <Card
       className="roboto text-center p-2 shadow"
-      style={
-        width < 400
-          ? { width: "100%", color: "white" }
-          : { width: "50%", marginLeft: "25%", color: "white" }
-      }
+      style={{ width: "100%", color: "white" }}
       bg="primary"
     >
       <Card.Title>
