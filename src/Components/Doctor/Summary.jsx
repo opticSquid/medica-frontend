@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import useWindowDimensions from "../Hooks/UseWindowDimensions";
 function Summary(props) {
-  const width = useWindowDimensions();
   return (
     <Card
       className="roboto text-center p-2 shadow"
