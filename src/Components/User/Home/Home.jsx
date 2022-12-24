@@ -1,13 +1,16 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Container } from "react-bootstrap";
 import Navbar from "../../Common/Navbar";
 import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 import Doctorarray from "./DoctorArray";
+import Instructions from "./Instructions";
 import PreviousAppointments from "./PreviousAppointments";
 import Slideshow from "./Slideshow";
 import Upcoming from "./Upcoming";
 function UserHome() {
   const width = useWindowDimensions();
+  const [showIns, setShowIns] = useState(true);
+  const handleInsClose = () => setShowIns(false);
   return (
     <Fragment>
       <Navbar />
@@ -93,6 +96,11 @@ function UserHome() {
         </p>
         <PreviousAppointments />
       </Container>
+      {showIns === true ? (
+        <Instructions show={showIns} close={handleInsClose} />
+      ) : (
+        <div />
+      )}
     </Fragment>
   );
 }

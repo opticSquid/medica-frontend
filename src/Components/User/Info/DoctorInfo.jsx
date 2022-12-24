@@ -94,7 +94,7 @@ function DoctorInfo(props) {
       <Container>
         <Row>
           <Col xs={5}>
-            <a href="tel:+918617882389">
+            <a href="tel:+911234567890">
               <Button
                 variant="success"
                 style={
@@ -121,7 +121,7 @@ function DoctorInfo(props) {
             </a>
           </Col>
           <Col xs={{ span: 5, offset: 2 }}>
-            <a href="mailto:soumalyabhattacharya6@gmail.com">
+            <a href="mailto:medica@medica.com">
               <Button
                 variant="danger"
                 style={

@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
-import { PersonCircle, CalendarEvent } from "react-bootstrap-icons";
+import { Card, Row, Col } from "react-bootstrap";
+import { CalendarEvent } from "react-bootstrap-icons";
 import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 import Image5 from "../../../Images/Image5.jpg";
 function Upcoming() {
