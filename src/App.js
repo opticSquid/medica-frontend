@@ -13,6 +13,7 @@ import {
 import Login from "./Components/Authentication/Login";
 import { Suspense } from "react";
 import { Spinner } from "react-bootstrap";
+import Signup from "./Components/Authentication/Signup";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/info" element={<Info />} />
           <Route path="/doctors" element={<Doctor />} />
           <Route path="*" element={<Navigate to="/" />} />

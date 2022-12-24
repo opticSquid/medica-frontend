@@ -20,7 +20,7 @@ function Login(props) {
         }
       >
         <Card.Header>
-          <Card.Title className="roboto text-center">Login</Card.Title>
+          <Card.Title className="roboto text-center">Medica</Card.Title>
         </Card.Header>
         <Card.Body>
           <Form>
