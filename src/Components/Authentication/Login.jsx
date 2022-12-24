@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import { Card, Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useWindowDimensions from "../Hooks/UseWindowDimensions";
 function Login(props) {
   const width = useWindowDimensions();
+  const navigate = useNavigate();
   const [cred, setCred] = useState({ email: "", pass: "" });
   const handleChange = (event) => {
     setCred({ ...cred, [event.target.name]: event.target.value });
+  };
+  const handleSubmit = (event) => {
+    if (cred.email === "" || cred.pass === "") {
+      alert("Fill all the fields");
+    } else {
+      event.preventDefault();
+      navigate("/");
+    }
   };
   return (
     <Container fluid>
@@ -31,6 +40,7 @@ function Login(props) {
                 name="email"
                 value={cred.email}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="pass">
@@ -40,6 +50,7 @@ function Login(props) {
                 name="pass"
                 value={cred.pass}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
           </Form>
@@ -47,7 +58,9 @@ function Login(props) {
         <Card.Footer>
           <Row>
             <Col xs={12} className="text-center">
-              <Button variant="primary">Login</Button>
+              <Button type="submit" variant="primary" onClick={handleSubmit}>
+                Login
+              </Button>
             </Col>
           </Row>
         </Card.Footer>
