@@ -7,7 +7,7 @@ function Navbar(props) {
   return (
     <Bar bg="primary" variant="dark" fixed="top" className="shadow">
       <Container fluid>
-        <Bar.Brand href="#" className="me-auto">
+        <Bar.Brand href="/" className="me-auto">
           Medica
         </Bar.Brand>
         <Nav>
