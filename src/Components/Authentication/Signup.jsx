@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Card, Container, Row, Col, Form, Button } from "react-bootstrap";
+import {
+  Card,
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  InputGroup,
+} from "react-bootstrap";
+import { Eye, EyeSlash } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
 import useWindowDimensions from "../Hooks/UseWindowDimensions";
 import DoctorDetails from "./DoctorDetails";
@@ -10,6 +19,12 @@ function Signup() {
     email: "",
     contactnumber: "",
     role: "role",
+    confirmed_password: "",
+  });
+  const [password, setPassword] = useState({ typepass: "", retypepass: "" });
+  const [showpass, setShowpass] = useState({
+    typepassBtn: false,
+    retypepassBtn: false,
   });
   const [doctorDetails, setDoctorDetails] = useState({
     regNo: "",
@@ -25,6 +40,12 @@ function Signup() {
   const handleChange = (event) => {
     setBasicDetails({
       ...basicdetails,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handlePasswordChange = (event) => {
+    setPassword({
+      ...password,
       [event.target.name]: event.target.value,
     });
   };
@@ -46,10 +67,15 @@ function Signup() {
       alert("Specify a role");
     } else {
       event.preventDefault();
-      console.log("Basic Details: ", basicdetails);
-      console.log("Doctor Details: ", doctorDetails);
-      console.log("Patient Details: ", patientDetails);
-      navigate("/");
+      if (password.typepass === password.retypepass) {
+        basicdetails.confirmed_password = password.typepass;
+        console.log("Basic Details: ", basicdetails);
+        console.log("Doctor Details: ", doctorDetails);
+        console.log("Patient Details: ", patientDetails);
+        navigate("/");
+      } else {
+        alert("passwords does not match!");
+      }
     }
   };
   const roleBasedDetails = () => {
@@ -82,9 +108,9 @@ function Signup() {
     } else if (basicdetails.role === "user" && width >= 576) {
       return { marginTop: "2%" };
     } else if (width <= 576) {
-      return { marginTop: "65%" };
+      return { marginTop: "35%" };
     } else {
-      return { marginTop: "10%" };
+      return { marginTop: "5%" };
     }
   };
   return (
@@ -124,6 +150,52 @@ function Signup() {
                 type="tel"
                 required
               />
+            </Form.Group>
+            <Form.Group controlId="typepassword">
+              <Form.Label>Password</Form.Label>
+              <InputGroup>
+                <Form.Control
+                  value={password.typepass}
+                  name="typepass"
+                  onChange={handlePasswordChange}
+                  type={showpass.typepassBtn === true ? "text" : "password"}
+                  required
+                />
+                <Button
+                  onClick={() =>
+                    setShowpass({
+                      ...showpass,
+                      typepassBtn: !showpass.typepassBtn,
+                    })
+                  }
+                  name="typepassBtn"
+                >
+                  {showpass.typepassBtn === true ? <EyeSlash /> : <Eye />}
+                </Button>
+              </InputGroup>
+            </Form.Group>
+            <Form.Group controlId="retypepassword">
+              <Form.Label>Retype Password</Form.Label>
+              <InputGroup>
+                <Form.Control
+                  value={password.retypepass}
+                  name="retypepass"
+                  onChange={handlePasswordChange}
+                  type={showpass.retypepassBtn === true ? "text" : "password"}
+                  required
+                />
+                <Button
+                  onClick={() =>
+                    setShowpass({
+                      ...showpass,
+                      retypepassBtn: !showpass.retypepassBtn,
+                    })
+                  }
+                  name="retypepassBtn"
+                >
+                  {showpass.retypepassBtn === true ? <EyeSlash /> : <Eye />}
+                </Button>
+              </InputGroup>
             </Form.Group>
             <Form.Group controlId="role">
               <Form.Label>You are a</Form.Label>
